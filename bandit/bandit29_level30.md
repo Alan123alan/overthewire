@@ -8,7 +8,7 @@ Level #30 Clone repository at ssh://bandit29-git@localhost:/home/bandit29-git/re
 ssh bandit29@bandit.labs.overthewire.org -p 2220
 
 //once in server as bandit29 go /tmp folder where you have write permissions
-git clone ssh://bandit29-git@localhost:2220/home/bandit28-git/repo
+git clone ssh://bandit29-git@localhost:2220/home/bandit29-git/repo
 
 //once the repo is cloned
 cd repo
