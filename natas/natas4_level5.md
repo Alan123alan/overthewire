@@ -1,7 +1,7 @@
 Level #5 go to URL and find natas5 user password
 
-- URL: http://natas3.natas.labs.overthewire.org/
-- User: natas3
+- URL: http://natas4.natas.labs.overthewire.org/
+- User: natas4
 - Password: tKOcJIbzM4lTs8hbCmzn5Zr4434fGZQm
 
 ### after navigating to URL an html page shows a div with following text
