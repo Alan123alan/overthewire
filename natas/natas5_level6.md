@@ -27,4 +27,4 @@ Level #6 go to URL and find natas6 user password
 ### I just reassembled the request with postman changing header to ->
 ### Cookie : loggedin1
 ```
-### <!--The password for natas5 is fOIvE0MDtPTgRhqmmvvAOt2EfXR6uQgR -->
+### <!--The password for natas6 is fOIvE0MDtPTgRhqmmvvAOt2EfXR6uQgR -->
