@@ -16,4 +16,4 @@ The first things to focus on are the unfamiliar ones:
   
 Solution was to directly access the .inc file by navigating to http://natas6.natas.labs.overthewire.org/includes/secret.inc  
   
-### <!--The password for natas7 is jmxSiH3SP6Sonf8dv66ng8v1cIEdjXWr-->
+The password for natas7 is jmxSiH3SP6Sonf8dv66ng8v1cIEdjXWr
