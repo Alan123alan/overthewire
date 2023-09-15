@@ -1,4 +1,4 @@
-Level #7 go to URL and find natas7 user password
+Level #6 go to URL and find natas7 user password
 
 - URL: http://natas6.natas.labs.overthewire.org/
 - User: natas6

@@ -1,4 +1,4 @@
-Level #3 go to URL and find natas3 user password
+Level #2 go to URL and find natas3 user password
 
 - URL: http://natas2.natas.labs.overthewire.org/
 - User: natas2

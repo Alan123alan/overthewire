@@ -1,4 +1,4 @@
-Level #5 go to URL and find natas5 user password
+Level #4 go to URL and find natas5 user password
 
 - URL: http://natas4.natas.labs.overthewire.org/
 - User: natas4
