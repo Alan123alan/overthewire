@@ -4,13 +4,6 @@ Level #13 go to URL and find natas14 user password
 - User: natas13
 - Password: lW3jYRI02ZKDBb8VtQBU1f6eDRo6WEj9
 
-Useful reads for this chanllenge:
-- [pathinfo()](https://www.php.net/manual/es/function.pathinfo.php)
-- [$_FILES](https://oregoom.com/php/files/)
-- [move_uploaded_files()](https://www.php.net/manual/en/function.move-uploaded-file.php)
-- [file upload vulnerabilities](https://www.prplbx.com/resources/blog/exploiting-file-upload-vulnerabilities/)
-- [postman file upload](https://blog.filestack.com/api/step-step-guide-postman-upload-file/)
-
 After navigating to URL an html page with a form with 4 inputs (2 type=hidden,1 type=file and 1 type=submit) and an anchor element with the text "View sourcecode" is loaded this time the page warns that only image files are accepted.  
 Clicking on the anchor elements redirects to the source code of the php script being run by server. The code that was not modified includes the functions:
 - genRandomString
