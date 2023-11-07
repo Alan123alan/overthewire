@@ -50,4 +50,4 @@ A script in Python could be useful to make multiple requests, sending an injecte
 substring.  
   
 The password for natas16 is 
-tRd7izRd5gATjJ9pKPeuAOlFejHQj32v
+TRD7iZrd5gATjj9PkPEuaOlfEjHqj32V
