@@ -33,17 +33,18 @@ What does it do:
 According to some [posts](https://book.hacktricks.xyz/network-services-pentesting/pentesting-web/php-tricks-esp) online `preg_match()` is commonly bypassed by using multiline inputs, because pregmatch only tries to match 
 the first line. **ERROR** This only works if regex has it's start delimited with `^` otherwise this bypass wont work.  
 
-searched for a way to execute a grep inside another grep command, eventually stumbled  
-upon this [article](https://tecadmin.net/difference-between-parameter-expansion-and-command-substitution-in-bash/#:~:text=The%20%24()%20syntax%20in%20Bash,assign%20it%20to%20a%20variable.).  
-
 Another common bypass is to pass preg_match a valid very large input, but this won't work for this specific case.
 
-Notes:
+Searched for a way to execute a grep inside another grep command, eventually stumbled  
+upon this [article](https://tecadmin.net/difference-between-parameter-expansion-and-command-substitution-in-bash/#:~:text=The%20%24()%20syntax%20in%20Bash,assign%20it%20to%20a%20variable.).  
+
+##### Notes (testing in my local machine)
+
 If you grep for a pattern and it doesn't exist in the search destination it will return nothing.
 ```Shell
     grep -e kkqPazSJBmrmU7UQJv17MHk1PGC4DxZMEP level13_natas14.md
 ```
-If you grep as a pattern the result of a command substitution of a grep that returns nothing the parent grep
+If you grep as a pattern the result of a grep command substitution that returns nothing the parent grep
 will choke.
 ```Shell
     grep -i $(grep -e kkqPazSJBmrmU7UQJv17MHk1PGC4DxZMEP level13_natas14.md) level14_natas15.md
@@ -64,6 +65,19 @@ echo $(grep -e qPazSJBmrmU7UQJv17MHk1PGC4DxZMEP level13_natas14.md) #outputs: qP
 #parent grep takes qPazSJBmrmU7UQJv17MHk1PGC4DxZMEP as pattern
 grep -i $(grep -e qPazSJBmrmU7UQJv17MHk1PGC4DxZMEP level13_natas14.md) level14_natas15.md #outputs: - Password: qPazSJBmrmU7UQJv17MHk1PGC4DxZMEP
 ```
+##### Notes(testing overthewire natas16 page behavior)
+
+When the grep command substitution retrieves a result it will supposedly be the whole password and then the parent pattern won't find the password pattern in the grepped file, showing as a result an empty output. On the other hand if grep command substitution returns nothing then the parent grep will grep for "" pattern and as a result it will show all the words contained in grepped file.
+
+In other words:
+- if grep command substitution returns the password output is empty
+- if grep command substitution returns nothing output is the file contents
+
+With this we can extract the password by checking only if output is empty, to make the check easier add
+a word that is confirmed to be in the dictionary file and that only retrieves itself when matched by grep.
+
+Word chosen: Englishing.
+
 Sometimes the outer grep chokes, [here](https://unix.stackexchange.com/questions/700725/how-to-grep-the-results-plural-of-another-command) is a stack exchange question about using command substitution nested in a grep.
 
 
