@@ -65,7 +65,7 @@ SELECT * FROM users WHERE username="natas18" AND password LIKE BINARY "<some_let
 ```
 
 Within the requests python module there is a property in the Response object named elapsed which shows the time delta between request
-and response.
+and response. More info [here](https://stackoverflow.com/questions/43252542/how-to-measure-server-response-time-for-python-requests-post-request)
 
   
 The password for natas18 is 
